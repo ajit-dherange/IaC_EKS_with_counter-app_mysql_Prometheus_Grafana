@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: counterapp
+    type: appserver
+  name: counterapp-deployment  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: appserver
+  template:
+    metadata:
+      labels:
+        type: appserver
+    spec:
+      containers:
+       - name: counterapp
+         image: ardher/counterapp:latest
+         ports:
+          - containerPort: 80
+            hostPort: 8888

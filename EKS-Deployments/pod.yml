@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ngnix
+    type: proxyserver
+  name: ngnix-deployment  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: proxyserver
+  template:
+    metadata:
+      labels:
+        type: proxyserver
+    spec:
+      containers:
+       - name: ngnix
+         image: nginx
+         ports:
+          - containerPort: 80
+            hostPort: 8888
