@@ -38,13 +38,13 @@ $  kubectl apply -f deploy.yml
 $  kubectl apply -f deploy-svc.yml
 ```
 ### Step 5: Deploy Application - Counter-app
-Run below commands to install Counter-app:
+Run below commands to install Counter-app pod:
 ```
 $  kubectl apply -f counter-app.yml
 $  kubectl apply -f counter-app-svc.yml
 ```
 ### Step 6: Deploy mysql DB
-Run below commands to install mysql-db:
+Run below commands to install mysql-db pod:
 ```
 $  kubectl apply -f mysql-secret.yml
 $  kubectl apply -f mysql-pvc.yml
