@@ -83,15 +83,15 @@ Get the node IP where pod is running by running below command:
 
 $  kubectl get pods -o wide
 
-**Note the public IP of the node for which we got Private IP above**
+**_Note the public IP of the node for which we got Private IP above_**
 
 Get the port number by running below command:
 
 $  kubectl get svc
 
-**Note the port number got from the above command**
+**_Note the port number got from the above command_**
 
-**Open the port on node security group (e.g. 30009)**
+**_Open the port on node security group (e.g. 30009)_**
 
 Browse the node public ip and port number to access application web interface: e.g. http://18.219.164.132:30009
 
