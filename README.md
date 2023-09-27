@@ -2,6 +2,7 @@
 
 ### Pre-requisite:
 **Verify below apps installed on your PC:**
+
 AWS Cli
 
 Terraform
@@ -25,10 +26,11 @@ $  terraform apply
 ```
 ### step 3: Connect to EKS cluster
 Goto the folder EKS-Deployments and run below commands to connect to EKS cluster and check resources
+```
 $  aws eks update-kubeconfig --name myekstest-cluster-01
 $  kubectl get svc
 $  kubectl get nodes
-
+```
 ### Step 4: Deploy Test Application - NGNIX
 Run below commands to install NGNIX pod:
 ```
@@ -75,12 +77,13 @@ Get the node IP where pod is running by running below command:
 
 $  kubectl get pods -o wide
 
-**Note the public IP of the node for the same we got Private IP above**
+**Note the public IP of the node for which we got Private IP above**
 
-Note the port number by running below command:
+Get the port number by running below command:
 
 $  kubectl get svc
 
+**Note the port number got from the above command**
 **Open the port on node security group (e.g. 30009)**
 
 Browse the node public ip and port number to access application web interface: e.g. http://18.219.164.132:30009
@@ -88,11 +91,12 @@ Browse the node public ip and port number to access application web interface: e
 **2) Test Prometheus and Grafana**
 Similar to above get bublic IP of the node, open ports on the node security group and browse public IP with port numbers
 
-e.g. http://18.219.164.132:30227 (Grafana)
-
+e.g. 
+     http://18.219.164.132:30227 (Grafana)
      http://18.219.164.132:30624 (Prometheus)
 
 **To deploy new app release, Update the image name in the file deploy.yml and run command again**
+
 $  kubectl apply -f deploy.yml 
 
 **3) Test mysql DB**
