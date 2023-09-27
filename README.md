@@ -47,7 +47,6 @@ $  kubectl apply -f counter-app-svc.yml
 Run below commands to install mysql-db pod:
 ```
 $  kubectl apply -f mysql-secret.yml
-$  kubectl apply -f mysql-pvc.yml
 $  kubectl apply -f mysql.yml
 $  kubectl apply -f mysql-svc.yml
 ```
