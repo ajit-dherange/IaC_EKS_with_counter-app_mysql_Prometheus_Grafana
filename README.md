@@ -14,7 +14,7 @@ Helm
 ### Step 1: Copy VPC ID
 Login to aws concole and Goto to VPC 
 
-Copy the default VPC ID and update in the file vars.tf from the folder EKS-AD (line no. 7)
+Copy the default VPC ID and update in the file _vars.tf_ from the folder EKS-AD (line no. 7)
 
 ### step 2: Create EKS cluster
 Goto the folder EKS-AD and run below commands:
