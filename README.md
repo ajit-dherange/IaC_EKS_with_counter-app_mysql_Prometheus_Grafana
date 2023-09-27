@@ -90,6 +90,7 @@ Get the port number by running below command:
 $  kubectl get svc
 
 **Note the port number got from the above command**
+
 **Open the port on node security group (e.g. 30009)**
 
 Browse the node public ip and port number to access application web interface: e.g. http://18.219.164.132:30009
