@@ -56,17 +56,23 @@ Run below commands to install Prometheus and Grafana:
 ```
 Add the Helm Stable Charts for your local client:
 $  helm repo add stable https://charts.helm.sh/stable
+
 Add prometheus Helm repo
 $  helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
 Create Prometheus namespace
 $  kubectl create namespace prometheus
+
 Install kube-prometheus-stack
 $  helm install stable prometheus-community/kube-prometheus-stack -n prometheus
+
 Check if prometheus and grafana pods are running 
 $  kubectl get pods -n prometheus
 $  kubectl get svc -n prometheus
+
 Edit Prometheus Service (replace third last line with "type: LoadBalancer")
 $  kubectl edit svc stable-kube-prometheus-sta-prometheus -n prometheus
+
 Edit Grafana Service (replace third last line with "type: LoadBalancer")
 kubectl edit svc stable-grafana -n prometheus
 ```
@@ -89,6 +95,7 @@ $  kubectl get svc
 Browse the node public ip and port number to access application web interface: e.g. http://18.219.164.132:30009
 
 **2) Test Prometheus and Grafana**
+
 Similar to above get bublic IP of the node, open ports on the node security group and browse public IP with port numbers
 
 e.g. 
@@ -103,14 +110,19 @@ $  kubectl apply -f deploy.yml
 ```
 Connect to the mysql-db pod using below command
 $  kubectl exec --stdin --tty mysql-deployment-5fbbd946ff-7dj7s -- /bin/bash
+
 Connect to the DB (use password mentioned in the kube secret)
 $  mysql –u root –p 
+
 Create new DB
 $  CREATE DATABASE counterapp_db;
+
 List databases
 $  show databases;
+
 Connect to the new DB
 $  use counterapp_db;
+
 Create a database table called Catalog with the following SQL statement
 $  CREATE TABLE Catalog(
     Sr INTEGER PRIMARY KEY,
@@ -119,10 +131,12 @@ $  CREATE TABLE Catalog(
     Surname VARCHAR(25),
     Gender VARCHAR(25)  
   );
+
 Add a row of data to the Catalog table with the following SQL statement:
 $  INSERT INTO Catalog 
   VALUES('1','Mr.','Ajit', 'Dherange',
          'Male');
+
 checkout the updated data using statement:
 $  SELECT * FROM Catalog;
 ```
