@@ -4,7 +4,7 @@ variable "AWS_REGION" {
 
 variable "default_VPC_id" {
   description = "CIDR for Test EKS VPC"
-  default     = "vpc-07b2af77184cf668e"
+  default     = "vpc-07b2af77184cxxxxx"
 }
 
 variable "asg_sub_pub_a_cidr" {
